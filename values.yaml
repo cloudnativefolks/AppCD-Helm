@@ -1,0 +1,20 @@
+replicaCount: 1
+
+image:
+  repository: sangam14/flask-crud
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 5100
+
+postgresql:
+  image:
+    repository: postgres
+    tag: latest
+  postgresqlUsername: postgres
+  postgresqlPassword: postgres
+  postgresqlDatabase: postgres
+  servicePort: 5432
+  volumeSize: 1Gi
